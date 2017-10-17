@@ -1,0 +1,66 @@
+{
+    "albums" : [
+        {
+            "id" : "0",
+            "title" : "Lille - Day 1",
+            "photos" : [
+                {
+                    "id" : "0-0",
+                    "title" : "Statue",
+                    "url" : "sample_images/IMG_20160408_172847.jpg"
+                },
+                {
+                    "id" : "0-1",
+                    "title" : "Newly renovated Lille Cathedral",
+                    "url" : "sample_images/IMG_20160408_160007.jpg"
+                },
+                {
+                    "id" : "0-2",
+                    "title" : "Interior of Lille Cathedral",
+                    "url" : "sample_images/IMG_20160408_155644.jpg"
+                },
+                {
+                    "id" : "0-3",
+                    "title" : "Lille Old Town Gate",
+                    "url" : "sample_images/IMG_20160408_154610.jpg"
+                },
+                {
+                    "id" : "0-4",
+                    "title" : "War Memorial",
+                    "url" : "sample_images/IMG_20160408_141327.jpg"
+                }
+            ]
+        },
+        {
+            "id" : "1",
+            "title" : "Lille - Day 2",
+            "photos" : [
+                {
+                    "id" : "1-0",
+                    "title" : "Lille City Centre",
+                    "url" : "sample_images/IMG_20160408_140952.jpg"
+                },
+                {
+                    "id" : "1-1",
+                    "title" : "Lille Town Hall",
+                    "url" : "sample_images/IMG_20160408_140948.jpg"
+                },
+                {
+                    "id" : "1-2",
+                    "title" : "Lille Opera House",
+                    "url" : "sample_images/IMG_20160408_140945.jpg"
+                },
+                {
+                    "id" : "1-3",
+                    "title" : "Capybara at Lille Zoo",
+                    "url" : "sample_images/IMG_20160408_110724.jpg"
+                },
+                {
+                    "id" : "1-4",
+                    "title" : "Meerkats at Lille Zoo",
+                    "url" : "sample_images/IMG_20160408_105103.jpg"
+                }
+            ]
+        }
+    ]
+}
