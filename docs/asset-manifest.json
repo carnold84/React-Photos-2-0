@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "./React-Photos-2-0/static/css/main.fa4e1c83.chunk.css",
-    "main.js": "./React-Photos-2-0/static/js/main.93653629.chunk.js",
-    "main.js.map": "./React-Photos-2-0/static/js/main.93653629.chunk.js.map",
-    "runtime-main.js": "./React-Photos-2-0/static/js/runtime-main.060fafdc.js",
-    "runtime-main.js.map": "./React-Photos-2-0/static/js/runtime-main.060fafdc.js.map",
-    "static/js/2.60a249eb.chunk.js": "./React-Photos-2-0/static/js/2.60a249eb.chunk.js",
-    "static/js/2.60a249eb.chunk.js.map": "./React-Photos-2-0/static/js/2.60a249eb.chunk.js.map",
-    "index.html": "./React-Photos-2-0/index.html",
-    "precache-manifest.1b84040bf2e994d9ebb54cc78eecb8b8.js": "./React-Photos-2-0/precache-manifest.1b84040bf2e994d9ebb54cc78eecb8b8.js",
-    "service-worker.js": "./React-Photos-2-0/service-worker.js",
-    "static/css/main.fa4e1c83.chunk.css.map": "./React-Photos-2-0/static/css/main.fa4e1c83.chunk.css.map",
-    "static/js/2.60a249eb.chunk.js.LICENSE.txt": "./React-Photos-2-0/static/js/2.60a249eb.chunk.js.LICENSE.txt",
-    "static/media/back-arrow.svg": "./React-Photos-2-0/static/media/back-arrow.8222cb96.svg"
+    "main.css": "/React-Photos-2-0/static/css/main.fa4e1c83.chunk.css",
+    "main.js": "/React-Photos-2-0/static/js/main.68f5acbf.chunk.js",
+    "main.js.map": "/React-Photos-2-0/static/js/main.68f5acbf.chunk.js.map",
+    "runtime-main.js": "/React-Photos-2-0/static/js/runtime-main.9b55732f.js",
+    "runtime-main.js.map": "/React-Photos-2-0/static/js/runtime-main.9b55732f.js.map",
+    "static/js/2.008c841a.chunk.js": "/React-Photos-2-0/static/js/2.008c841a.chunk.js",
+    "static/js/2.008c841a.chunk.js.map": "/React-Photos-2-0/static/js/2.008c841a.chunk.js.map",
+    "index.html": "/React-Photos-2-0/index.html",
+    "precache-manifest.778111d706f0c95d545c03ac6796e876.js": "/React-Photos-2-0/precache-manifest.778111d706f0c95d545c03ac6796e876.js",
+    "service-worker.js": "/React-Photos-2-0/service-worker.js",
+    "static/css/main.fa4e1c83.chunk.css.map": "/React-Photos-2-0/static/css/main.fa4e1c83.chunk.css.map",
+    "static/js/2.008c841a.chunk.js.LICENSE.txt": "/React-Photos-2-0/static/js/2.008c841a.chunk.js.LICENSE.txt",
+    "static/media/back-arrow.svg": "/React-Photos-2-0/static/media/back-arrow.8222cb96.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.060fafdc.js",
-    "static/js/2.60a249eb.chunk.js",
+    "static/js/runtime-main.9b55732f.js",
+    "static/js/2.008c841a.chunk.js",
     "static/css/main.fa4e1c83.chunk.css",
-    "static/js/main.93653629.chunk.js"
+    "static/js/main.68f5acbf.chunk.js"
   ]
 }
