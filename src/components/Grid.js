@@ -1,6 +1,6 @@
-import React from "react";
-import propTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import propTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Container = styled.div`
     width: 100%;
@@ -10,15 +10,15 @@ const Container = styled.div`
 `;
 
 const Grid = props => {
-    const { children } = props;
+  const { children } = props;
 
-    return <Container>{children}</Container>;
+  return <Container>{children}</Container>;
 };
 
 const { array } = propTypes;
 
 Grid.propTypes = {
-    items: array,
+  items: array,
 };
 
 export default Grid;

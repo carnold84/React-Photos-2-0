@@ -43,30 +43,30 @@ const Title = styled.h2`
 `;
 
 const Actionbar = props => {
-    const { title, onBackClick } = props;
+  const { title, onBackClick } = props;
 
-    let back_btn = undefined;
+  let back_btn = undefined;
 
-    if (onBackClick) {
-        back_btn = (
-            <BackBtn onClick={onBackClick}>
-                <img src={back_button} alt="Back" />
-            </BackBtn>
-        );
-    }
-
-    return (
-        <Container>
-            {back_btn}
-            <Title>{title}</Title>
-        </Container>
+  if (onBackClick) {
+    back_btn = (
+      <BackBtn onClick={onBackClick}>
+        <img src={back_button} alt="Back" />
+      </BackBtn>
     );
+  }
+
+  return (
+    <Container>
+      {back_btn}
+      <Title>{title}</Title>
+    </Container>
+  );
 };
 
 const { func } = PropTypes;
 
 Actionbar.propTypes = {
-    onBackClick: func,
+  onBackClick: func,
 };
 
 export default Actionbar;

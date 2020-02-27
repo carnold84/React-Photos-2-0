@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -25,70 +25,60 @@ const BgImage = styled.div`
     transition: opacity 500ms ease-out;
 `;
 
-class Picture extends Component {
-    static TYPES = {
-        FILL: 'cover',
-        FIT: 'contain',
-    };
+export const TYPES = {
+  FILL: 'cover',
+  FIT: 'contain',
+};
 
-    state = {
-        isLoading: true,
-        url: '',
-    };
+const Picture = props => {
+  const [imageUrl, setImageUrl] = useState('');
 
-    image = undefined;
+  const { height, type, url, width } = props;
+  let content = undefined;
 
-    onImageLoaded = () => {
-        const isLoading = true;
-        const url = this.image.src;
+  if (imageUrl === '') {
+    content = <Loading />;
+  }
 
-        this.setState({ isLoading, url });
-    };
+  let image = undefined;
 
-    componentWillMount = () => {
-        const { url, width, height } = this.props;
+  const onImageLoaded = () => {
+    const url = image.src;
 
-        this.image = new Image(width, height);
-        this.image.addEventListener('load', this.onImageLoaded, false);
-        this.image.src = url;
-    };
+    setImageUrl(url);
+  };
 
-    render = () => {
-        const { url, width, height, type } = this.props;
-        let content = undefined;
+  image = new Image(width, height);
+  image.addEventListener('load', onImageLoaded, false);
+  image.src = url;
 
-        if (this.state.url === '') {
-            content = <Loading />;
-        }
-
-        return (
-            <Container width={width} height={height}>
-                <BgImage
-                    url={this.state.url}
-                    opacity={this.state.url === '' ? 0 : 1}
-                    width={width}
-                    height={height}
-                    type={type}
-                />
-                {content}
-            </Container>
-        );
-    };
-}
+  return (
+    <Container width={width} height={height}>
+      <BgImage
+        url={imageUrl}
+        opacity={imageUrl === '' ? 0 : 1}
+        width={width}
+        height={height}
+        type={type}
+      />
+      {content}
+    </Container>
+  );
+};
 
 const { string, oneOf } = PropTypes;
 
 Picture.propTypes = {
-    url: string.isRequired,
-    width: string,
-    height: string,
-    type: oneOf([Picture.TYPES.FILL, Picture.TYPES.FIT]),
+  height: string,
+  type: oneOf([TYPES.FILL, TYPES.FIT]),
+  url: string.isRequired,
+  width: string,
 };
 
 Picture.defaultProps = {
-    width: '100%',
-    height: '100%',
-    type: Picture.TYPES.FILL,
+  height: '100%',
+  type: TYPES.FILL,
+  width: '100%',
 };
 
 export default Picture;

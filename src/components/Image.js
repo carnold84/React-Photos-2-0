@@ -25,23 +25,23 @@ const Title = styled.p`
 `;
 
 const Image = props => {
-    const { id, title, imageUrl, onClick } = props;
+  const { id, title, imageUrl, onClick } = props;
 
-    return (
-        <Container onClick={() => onClick(id)}>
-            <Picture url={imageUrl} />
-            <Title>{title}</Title>
-        </Container>
-    );
+  return (
+    <Container onClick={() => onClick(id)}>
+      <Picture url={imageUrl} />
+      <Title>{title}</Title>
+    </Container>
+  );
 };
 
 const { string, func } = PropTypes;
 
 Image.propTypes = {
-    id: string.isRequired,
-    title: string,
-    imageUrl: string,
-    onClick: func,
+  id: string.isRequired,
+  title: string,
+  imageUrl: string,
+  onClick: func,
 };
 
 export default Image;

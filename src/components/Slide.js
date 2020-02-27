@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Picture from './Picture';
+import Picture, {TYPES} from './Picture';
 
 const Container = styled.div`
     position: absolute;
@@ -26,21 +26,21 @@ const Title = styled.p`
 `;
 
 const Slide = props => {
-    const { title, imageUrl } = props;
+  const { title, imageUrl } = props;
 
-    return (
-        <Container>
-            <Picture url={imageUrl} type={Picture.TYPES.FIT} />
-            <Title>{title}</Title>
-        </Container>
-    );
+  return (
+    <Container>
+      <Picture url={imageUrl} type={TYPES.FIT} />
+      <Title>{title}</Title>
+    </Container>
+  );
 };
 
 const { string } = PropTypes;
 
 Slide.propTypes = {
-    title: string,
-    imageUrl: string,
+  title: string,
+  imageUrl: string,
 };
 
 export default Slide;

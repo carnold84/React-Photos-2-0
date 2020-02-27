@@ -66,15 +66,15 @@ const Path = styled.circle`
 `;
 
 const Loading = () => {
-    return (
-        <Container>
-            <Loader>
-                <Circle viewBox="25 25 50 50">
-                    <Path cx="50" cy="50" r="15" fill="none" stroke-width="3" stroke-miterlimit="10" />
-                </Circle>
-            </Loader>
-        </Container>
-    );
+  return (
+    <Container>
+      <Loader>
+        <Circle viewBox="25 25 50 50">
+          <Path cx="50" cy="50" r="15" fill="none" stroke-width="3" stroke-miterlimit="10" />
+        </Circle>
+      </Loader>
+    </Container>
+  );
 };
 
 export default Loading;
