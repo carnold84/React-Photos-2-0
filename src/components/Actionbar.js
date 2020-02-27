@@ -7,14 +7,14 @@ import back_button from '../images/back-arrow.svg';
 const Container = styled.div`
     position: relative;
     width: 100%;
-    height: 40px;
+    height: 50px;
     border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
     display: flex;
 `;
 
 const BackBtn = styled.button`
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     cursor: pointer;
     border: none;
     border-right: rgba(0, 0, 0, 0.05) solid 1px;
@@ -34,9 +34,9 @@ const BackBtn = styled.button`
 
 const Title = styled.h2`
     font-size: 1.2em;
-    line-height: 1.2em;
+    line-height: 1em;
     font-weight: normal;
-    margin: 0 0 0 15px;
+    margin: 1px 0 0 15px;
     flex-grow: 1;
     align-items: center;
     display: flex;

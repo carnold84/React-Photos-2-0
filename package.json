@@ -5,6 +5,7 @@
   "devDependencies": {
     "lodash": "^4.17.15",
     "react-scripts": "3.4.0",
+    "rimraf": "^3.0.2",
     "styled-components": "^5.0.1"
   },
   "dependencies": {
@@ -14,6 +15,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "remove-docs": "rimraf docs",
+    "rename": "node -e \"require('fs').rename('build', 'docs', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
+    "postbuild": "npm run remove-docs && npm run rename",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
