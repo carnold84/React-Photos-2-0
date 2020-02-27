@@ -2,7 +2,7 @@
   "name": "react-photos-2-0",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "./React-Photos-2-0/",
   "devDependencies": {
     "lodash": "^4.17.15",
     "react-scripts": "3.4.0",
