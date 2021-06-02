@@ -5,7 +5,7 @@
   "rules": {
     "comma-dangle": [
       "error",
-      "always-multiline"
+      "only-multiline"
     ],
     "indent": [
       "error",
