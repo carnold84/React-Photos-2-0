@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://carnold84.github.io/React-Photos-2-0/",
   "devDependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "react-scripts": "3.4.0",
     "rimraf": "^3.0.2",
     "styled-components": "^5.0.1"
