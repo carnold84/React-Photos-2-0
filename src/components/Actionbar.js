@@ -5,51 +5,49 @@ import styled from 'styled-components';
 import back_button from '../images/back-arrow.svg';
 
 const Container = styled.div`
-    position: relative;
-    width: 100%;
-    height: 50px;
-    border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
-    display: flex;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+  display: flex;
 `;
 
 const BackBtn = styled.button`
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    border: none;
-    border-right: rgba(0, 0, 0, 0.05) solid 1px;
-    background-color: transparent;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  border: none;
+  border-right: rgba(0, 0, 0, 0.1) solid 1px;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-    }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Title = styled.h2`
-    font-size: 1.2em;
-    line-height: 1em;
-    font-weight: normal;
-    margin: 1px 0 0 15px;
-    flex-grow: 1;
-    align-items: center;
-    display: flex;
+  font-size: 1.2em;
+  line-height: 1em;
+  font-weight: normal;
+  margin: 1px 0 0 15px;
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
 `;
 
-const Actionbar = props => {
-  const { title, onBackClick } = props;
+const Actionbar = ({ onBack, title }) => {
+  let backBtn = undefined;
 
-  let back_btn = undefined;
-
-  if (onBackClick) {
-    back_btn = (
-      <BackBtn onClick={onBackClick}>
+  if (onBack) {
+    backBtn = (
+      <BackBtn onClick={onBack}>
         <img src={back_button} alt="Back" />
       </BackBtn>
     );
@@ -57,7 +55,7 @@ const Actionbar = props => {
 
   return (
     <Container>
-      {back_btn}
+      {backBtn}
       <Title>{title}</Title>
     </Container>
   );

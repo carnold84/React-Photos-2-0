@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,QAAS,CACT,SAAU,CACV,iEAAsE,CACtE,oBACF,CAEA,EACE,qBACF","file":"main.fa4e1c83.chunk.css","sourcesContent":["body {\n  margin: 0;\n  padding: 0;\n  font-family: 'Roboto Condensed', Arial, Helvetica, Verdana, sans-serif;\n  color: rgba(0, 0, 0, 0.8);\n}\n\n* {\n  box-sizing: border-box;\n}"]}

@@ -5,14 +5,7 @@
   "rules": {
     "comma-dangle": [
       "error",
-      "always-multiline"
-    ],
-    "indent": [
-      "error",
-      2,
-      {
-        "outerIIFEBody": 2
-      }
+      "only-multiline"
     ],
     "semi": [
       "error",
