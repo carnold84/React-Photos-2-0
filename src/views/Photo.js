@@ -4,6 +4,7 @@ import { usePhoto } from '../store';
 import Actionbar from '../components/Actionbar';
 import Slide from '../components/Slide';
 import { Content } from '../styles';
+import Header from '../components/Header';
 
 const Photo = ({ albumId, navigate, photoId }) => {
   const photo = usePhoto(albumId, photoId);
@@ -14,6 +15,7 @@ const Photo = ({ albumId, navigate, photoId }) => {
 
   return (
     <>
+      <Header />
       <Actionbar title={photo.title} onBack={onBack} />
       <motion.div
         animate={{ opacity: 1 }}

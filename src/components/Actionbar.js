@@ -7,9 +7,8 @@ const Container = styled.div`
   display: flex;
   flex-shrink: 0;
   height: 40px;
-  margin: 20px;
+  margin: 20px 20px 10px;
   position: relative;
-  width: 100%;
 `;
 
 const BackBtn = styled.button`
@@ -25,8 +24,8 @@ const BackBtn = styled.button`
 
   svg {
     fill: inherit;
-    height: 24px;
-    width: 24px;
+    height: 28px;
+    width: 28px;
   }
 
   &:hover {
@@ -39,7 +38,7 @@ const BackBtn = styled.button`
 `;
 
 const Title = styled.h2`
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 1rem;
   font-weight: normal;
   margin: 1px 0 0 0;

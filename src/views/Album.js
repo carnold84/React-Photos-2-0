@@ -5,6 +5,7 @@ import { createImages } from '../createImages';
 import Grid from '../components/Grid';
 import Actionbar from '../components/Actionbar';
 import { Content } from '../styles';
+import Header from '../components/Header';
 
 const Album = ({ albumId, navigate }) => {
   const album = useAlbum(albumId);
@@ -17,6 +18,7 @@ const Album = ({ albumId, navigate }) => {
 
   return (
     <>
+      <Header />
       <Actionbar title={album.title} onBack={onBack} />
       <motion.div
         animate={{ opacity: 1 }}

@@ -5,8 +5,23 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: grid;
   gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 460px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 1250px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 `;
 
 const Grid = (props) => {
