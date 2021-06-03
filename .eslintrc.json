@@ -7,13 +7,6 @@
       "error",
       "only-multiline"
     ],
-    "indent": [
-      "error",
-      2,
-      {
-        "outerIIFEBody": 2
-      }
-    ],
     "semi": [
       "error",
       "always"
