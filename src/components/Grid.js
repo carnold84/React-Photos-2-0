@@ -3,13 +3,13 @@ import propTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    width: 100%;
-    grid-template-rows: repeat(3, 180px [col-start]);
-    grid-template-columns: 25% 25% 25% 25%;
-    display: grid;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
 `;
 
-const Grid = props => {
+const Grid = (props) => {
   const { children } = props;
 
   return <Container>{children}</Container>;

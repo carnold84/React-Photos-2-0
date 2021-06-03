@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { Link } from '@reach/router';
 import styled from 'styled-components';
@@ -6,34 +7,62 @@ import styled from 'styled-components';
 import Picture from './Picture';
 
 const Container = styled(Link)`
-  position: relative;
   cursor: pointer;
-`;
-
-const Title = styled.p`
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  color: rgba(255, 255, 255, 1);
-  padding: 10px;
-  margin: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.75) 100%
-  );
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
   display: flex;
+  flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
 `;
 
-const Image = ({ title, imageUrl, to }) => {
+const Frame = styled(motion.div)`
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+`;
+
+const ImageContainer = styled(motion.div)`
+  height: 180px;
+  position: relative;
+  width: 100%;
+`;
+
+const Title = styled.h3`
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.2rem;
+  margin: 8px 0 0;
+`;
+
+const SubTitle = styled.p`
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1rem;
+  margin: 8px 0 0;
+`;
+
+const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
+
+const frameVariants = {
+  hover: { scale: 0.95 },
+};
+
+const imageVariants = {
+  hover: { scale: 1.1 },
+};
+
+const Image = ({ imageUrl, isAnimated, subTitle, title, to }) => {
   return (
     <Container to={to}>
-      <Picture url={imageUrl} />
+      <Frame
+        transition={transition}
+        variants={frameVariants}
+        whileHover={'hover'}>
+        <ImageContainer variants={imageVariants} transition={transition}>
+          <Picture isAnimated={isAnimated} url={imageUrl} />
+        </ImageContainer>
+      </Frame>
       <Title>{title}</Title>
+      {subTitle && <SubTitle>{subTitle}</SubTitle>}
     </Container>
   );
 };
@@ -43,6 +72,7 @@ const { string } = PropTypes;
 Image.propTypes = {
   id: string.isRequired,
   imageUrl: string,
+  subTitle: string,
   title: string,
   to: string,
 };
