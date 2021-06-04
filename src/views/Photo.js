@@ -13,6 +13,8 @@ const Photo = ({ albumId, navigate, photoId }) => {
     navigate(`${process.env.PUBLIC_URL}/album/${albumId}`);
   };
 
+  console.log(photo);
+
   return (
     <>
       <Header />

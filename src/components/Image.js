@@ -16,6 +16,7 @@ const Container = styled(Link)`
 `;
 
 const Frame = styled(motion.div)`
+  border: 1px solid rgba(0, 0, 0, 0.1);
   height: 180px;
   overflow: hidden;
   position: relative;
