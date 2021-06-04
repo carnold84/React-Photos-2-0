@@ -24,17 +24,6 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Container = styled.div`
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-`;
-
-const Content = styled.div`
-  max-width: 1000px;
-  width: 100%;
-`;
-
 const LoadingScreen = styled.div`
   align-items: center;
   display: flex;
@@ -63,12 +52,10 @@ const App = ({ source }) => {
 
   if (albums) {
     return (
-      <Container>
+      <>
         <GlobalStyles />
-        <Content>
-          <Routes />
-        </Content>
-      </Container>
+        <Routes />
+      </>
     );
   }
 

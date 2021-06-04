@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Picture, { TYPES } from './Picture';
 
 const Container = styled.div`
-  padding: 20px;
   position: absolute;
   width: 100%;
   height: 100%;

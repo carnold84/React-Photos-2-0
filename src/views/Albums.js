@@ -2,7 +2,7 @@ import React from 'react';
 import { useAlbums } from '../store';
 import { createImages } from '../createImages';
 import Actionbar from '../components/Actionbar';
-import { Content } from '../styles';
+import Content from '../components/Content';
 import Header from '../components/Header';
 import AnimatedGrid from '../components/AnimatedGrid';
 
@@ -14,8 +14,8 @@ const Albums = () => {
   return (
     <>
       <Header />
-      <Actionbar title={'Albums'} />
-      <Content style={{ margin: '0 20px 20px' }}>
+      <Content>
+        <Actionbar title={'Albums'} />
         <AnimatedGrid>{items}</AnimatedGrid>
       </Content>
     </>

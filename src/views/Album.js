@@ -2,7 +2,7 @@ import React from 'react';
 import { useAlbum } from '../store';
 import { createImages } from '../createImages';
 import Actionbar from '../components/Actionbar';
-import { Content } from '../styles';
+import Content from '../components/Content';
 import Header from '../components/Header';
 import AnimatedGrid from '../components/AnimatedGrid';
 
@@ -18,8 +18,8 @@ const Album = ({ albumId, navigate }) => {
   return (
     <>
       <Header />
-      <Actionbar title={album.title} onBack={onBack} />
-      <Content style={{ margin: '0 20px 20px' }}>
+      <Content>
+        <Actionbar title={album.title} onBack={onBack} />
         <AnimatedGrid>{items}</AnimatedGrid>
       </Content>
     </>
