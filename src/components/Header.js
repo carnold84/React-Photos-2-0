@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-shrink: 0;
   height: 65px;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0 25px;
   position: relative;
 `;
