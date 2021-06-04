@@ -5,24 +5,25 @@ import styled from 'styled-components';
 import Loading from './Loading';
 
 const Container = styled.div`
-    width: ${props => (props.width ? props.width : '100%')};
-    height: ${props => (props.height ? props.height : '100%')};
-    border: ${props => (props.border ? '#f2f2f2 solid 1px' : 'none')};
-    align-items: center;
-    justify-content: center;
-    display: flex;
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : '100%')};
+  border: ${(props) => (props.border ? '#f2f2f2 solid 1px' : 'none')};
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `;
 
 const BgImage = styled.div`
-    position: absolute;
-    width: ${props => (props.width ? props.width : '100%')};
-    height: ${props => (props.height ? props.height : '100%')};
-    background-position: center center;
-    background-size: ${props => props.type};
-    background-image: url(${props => props.url});
-    background-repeat: no-repeat;
-    opacity: ${props => props.opacity};
-    transition: opacity 500ms ease-out;
+  position: absolute;
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : '100%')};
+  background-position: center center;
+  background-size: ${(props) => props.type};
+  background-image: url(${(props) => props.url});
+  background-repeat: no-repeat;
+  opacity: ${(props) => props.opacity};
+  transition: ${(props) =>
+    props.isAnimated ? 'opacity 500ms ease-out' : 'none'};
 `;
 
 export const TYPES = {
@@ -30,10 +31,9 @@ export const TYPES = {
   FIT: 'contain',
 };
 
-const Picture = props => {
+const Picture = ({ height, isAnimated = true, type, url, width }) => {
   const [imageUrl, setImageUrl] = useState('');
 
-  const { height, type, url, width } = props;
   let content = undefined;
 
   if (imageUrl === '') {
@@ -55,11 +55,12 @@ const Picture = props => {
   return (
     <Container width={width} height={height}>
       <BgImage
-        url={imageUrl}
-        opacity={imageUrl === '' ? 0 : 1}
-        width={width}
         height={height}
+        isAnimated={isAnimated}
+        opacity={imageUrl === '' ? 0 : 1}
         type={type}
+        url={imageUrl}
+        width={width}
       />
       {content}
     </Container>

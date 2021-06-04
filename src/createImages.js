@@ -18,9 +18,10 @@ export const createImages = (data, prefix) => {
     return (
       <Image
         id={item.id}
-        title={item.title}
         imageUrl={image_url}
+        isAnimated={false}
         key={item.id}
+        title={item.title}
         to={`${process.env.PUBLIC_URL}/${prefix}/${item.id}`}
       />
     );

@@ -1,11 +1,12 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
+  width: 100%;
 
   @media (min-width: 460px) {
     grid-template-columns: 1fr 1fr;
@@ -24,16 +25,19 @@ const Container = styled.div`
   }
 `;
 
-const Grid = (props) => {
-  const { children } = props;
-
-  return <Container>{children}</Container>;
+const AnimatedGrid = ({ children }) => {
+  return (
+    <Container
+      animate="enter"
+      exit="exit"
+      initial="initial"
+      variants={{
+        enter: { transition: { staggerChildren: 0.1 } },
+        exit: { transition: { staggerChildren: 0.1 } },
+      }}>
+      {children}
+    </Container>
+  );
 };
 
-const { array } = propTypes;
-
-Grid.propTypes = {
-  items: array,
-};
-
-export default Grid;
+export default AnimatedGrid;

@@ -1,30 +1,36 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import back_button from '../images/back-arrow.svg';
-
-const Container = styled.div`
-  position: relative;
-  width: 100%;
-  height: 50px;
-  border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+const Container = styled(motion.div)`
+  align-items: center;
   display: flex;
+  flex-shrink: 0;
+  height: 40px;
+  margin: 20px 0 10px;
+  position: relative;
 `;
 
 const BackBtn = styled.button`
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  border: none;
-  border-right: rgba(0, 0, 0, 0.1) solid 1px;
-  background-color: transparent;
   align-items: center;
-  justify-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   display: flex;
+  fill: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  margin: 0 10px 0 -2px;
+  padding: 0;
+
+  svg {
+    fill: inherit;
+    height: 28px;
+    width: 28px;
+  }
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    fill: rgba(0, 0, 0, 1);
   }
 
   &:focus {
@@ -33,14 +39,16 @@ const BackBtn = styled.button`
 `;
 
 const Title = styled.h2`
-  font-size: 1.2em;
-  line-height: 1em;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
   font-weight: normal;
-  margin: 1px 0 0 15px;
+  margin: 1px 0 0 0;
   flex-grow: 1;
   align-items: center;
   display: flex;
 `;
+
+const transition = { duration: 0.5 };
 
 const Actionbar = ({ onBack, title }) => {
   let backBtn = undefined;
@@ -48,13 +56,28 @@ const Actionbar = ({ onBack, title }) => {
   if (onBack) {
     backBtn = (
       <BackBtn onClick={onBack}>
-        <img src={back_button} alt="Back" />
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.535 3.515L7.04999 12L15.535 20.485L16.95 19.071L9.87799 12L16.95 4.929L15.535 3.515Z" />
+        </svg>
       </BackBtn>
     );
   }
 
   return (
-    <Container>
+    <Container
+      animate="enter"
+      exit="exit"
+      initial="initial"
+      variants={{
+        initial: { opacity: 0, transition, x: -20 },
+        enter: { opacity: 1, transition, x: 0 },
+        exit: { opacity: 0, transition, x: 20 },
+      }}>
       {backBtn}
       <Title>{title}</Title>
     </Container>

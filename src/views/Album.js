@@ -1,9 +1,10 @@
 import React from 'react';
 import { useAlbum } from '../store';
 import { createImages } from '../createImages';
-import Grid from '../components/Grid';
 import Actionbar from '../components/Actionbar';
-import { Content } from '../styles';
+import Content from '../components/Content';
+import Header from '../components/Header';
+import AnimatedGrid from '../components/AnimatedGrid';
 
 const Album = ({ albumId, navigate }) => {
   const album = useAlbum(albumId);
@@ -16,9 +17,10 @@ const Album = ({ albumId, navigate }) => {
 
   return (
     <>
-      <Actionbar title={album.title} onBack={onBack} />
+      <Header />
       <Content>
-        <Grid>{items}</Grid>
+        <Actionbar title={album.title} onBack={onBack} />
+        <AnimatedGrid>{items}</AnimatedGrid>
       </Content>
     </>
   );
