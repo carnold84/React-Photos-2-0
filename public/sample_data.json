@@ -2,63 +2,85 @@
     "albums" : [
         {
             "id" : "1",
-            "title" : "Lille - Day 1",
+            "title" : "Nature",
             "photos" : [
                 {
                     "id" : "1",
-                    "title" : "Statue",
-                    "url" : "sample_images/IMG_20160408_172847.jpg"
+                    "location": "Islande, Islande",
+                    "title" : "fjadrargljufur Canyon",
+                    "url" : "nature-1.jpg"
                 },
                 {
                     "id" : "2",
-                    "title" : "Newly renovated Lille Cathedral",
-                    "url" : "sample_images/IMG_20160408_160007.jpg"
+                    "location": "Hinterer Langbathsee",
+                    "title" : "Ebensee, Österreich",
+                    "url" : "nature-2.jpg"
                 },
                 {
                     "id" : "3",
-                    "title" : "Interior of Lille Cathedral",
-                    "url" : "sample_images/IMG_20160408_155644.jpg"
+                    "location": "Tenerife, Spain",
+                    "title" : "Tenerife, Spain",
+                    "url" : "nature-3.jpg"
                 },
                 {
                     "id" : "4",
-                    "title" : "Lille Old Town Gate",
-                    "url" : "sample_images/IMG_20160408_154610.jpg"
+                    "location": "Pully, Suisse",
+                    "title" : "Lac Léman",
+                    "url" : "nature-4.jpg"
                 },
                 {
                     "id" : "5",
-                    "title" : "War Memorial",
-                    "url" : "sample_images/IMG_20160408_141327.jpg"
+                    "location": "Iceland",
+                    "title" : "Skógafoss",
+                    "url" : "nature-5.jpg"
+                },
+                {
+                    "id" : "6",
+                    "location": "Tuolumne Meadows, United States",
+                    "title" : "Yosemite Tunnel",
+                    "url" : "nature-6.jpg"
+                },
+                {
+                    "id" : "7",
+                    "location": "Cumberland wildlife park",
+                    "title" : "Grünau im Almtal, Austria",
+                    "url" : "nature-7.jpg"
                 }
             ]
         },
         {
             "id" : "2",
-            "title" : "Lille - Day 2",
+            "title" : "Architecture",
             "photos" : [
                 {
                     "id" : "1",
-                    "title" : "Lille City Centre",
-                    "url" : "sample_images/IMG_20160408_140952.jpg"
+                    "location": "London, United Kingdom",
+                    "title" : "The British Museum",
+                    "url" : "architecture-1.jpg"
                 },
                 {
                     "id" : "2",
-                    "title" : "Lille Town Hall",
-                    "url" : "sample_images/IMG_20160408_140948.jpg"
+                    "location": "Milan, Italy",
+                    "title" : "Bosco Verticale",
+                    "url" : "architecture-2.jpg"
                 },
                 {
                     "id" : "3",
-                    "title" : "Lille Opera House",
-                    "url" : "sample_images/IMG_20160408_140945.jpg"
+                    "location": "Hudson Yards, Manhattan, New York, NY, USA",
+                    "title" : "Vessel",
+                    "url" : "architecture-3.jpg"
                 },
                 {
                     "id" : "4",
-                    "title" : "Capybara at Lille Zoo",
-                    "url" : "sample_images/IMG_20160408_110724.jpg"
+                    "location": "Paris, France",
+                    "title" : "Saint Chapelle",
+                    "url" : "architecture-4.jpg"
                 },
                 {
                     "id" : "5",
-                    "title" : "Meerkats at Lille Zoo",
-                    "url" : "sample_images/IMG_20160408_105103.jpg"
+                    "location": "Tehran, Iran",
+                    "title" : "Azadi Tower",
+                    "url" : "architecture-5.jpg"
                 }
             ]
         }
