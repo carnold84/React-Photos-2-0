@@ -27,7 +27,7 @@ const Photo = ({ albumId, navigate, photoId }) => {
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0.9 }}
           exit={{ opacity: 0, scale: 0.9 }}
-          style={{ display: 'flex', height: '100%' }}
+          style={{ display: 'flex', height: '100%', position: 'relative' }}
           transition={{ ease: 'easeOut', duration: 0.5 }}>
           <div
             style={{

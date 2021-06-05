@@ -8,7 +8,7 @@ import Picture from './Picture';
 
 const Container = styled(Link)`
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   position: relative;
   text-decoration: none;

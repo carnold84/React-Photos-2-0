@@ -13,7 +13,7 @@ const Container = styled.div`
 const Slide = ({ isAnimated, imageUrl, title }) => {
   return (
     <Container>
-      <Picture isAnimated={isAnimated} url={imageUrl} />
+      <Picture isAnimated={isAnimated} sizeBy={'height'} url={imageUrl} />
     </Container>
   );
 };

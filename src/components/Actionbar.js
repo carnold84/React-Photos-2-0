@@ -8,7 +8,7 @@ const Container = styled(motion.div)`
   display: flex;
   flex-shrink: 0;
   height: 40px;
-  margin: 20px 0 10px;
+  margin: 20px 0;
   position: relative;
 `;
 
