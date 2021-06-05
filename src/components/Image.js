@@ -17,14 +17,12 @@ const Container = styled(Link)`
 
 const Frame = styled(motion.div)`
   border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 180px;
   overflow: hidden;
   position: relative;
   width: 100%;
 `;
 
 const ImageContainer = styled(motion.div)`
-  height: 180px;
   position: relative;
   width: 100%;
 `;
@@ -36,9 +34,9 @@ const Title = styled.h3`
 `;
 
 const SubTitle = styled.p`
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
-  margin: 8px 0 0;
+  margin: 4px 0 0;
 `;
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };

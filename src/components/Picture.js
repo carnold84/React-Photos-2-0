@@ -1,84 +1,92 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
+import { string } from 'prop-types';
 import styled from 'styled-components';
 
 import Loading from './Loading';
 
-const Container = styled.div`
-  width: ${(props) => (props.width ? props.width : '100%')};
-  height: ${(props) => (props.height ? props.height : '100%')};
-  border: ${(props) => (props.border ? '#f2f2f2 solid 1px' : 'none')};
+const Wrapper = styled.div`
   align-items: center;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
-const BgImage = styled.div`
+const LoadingScreen = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
   position: absolute;
-  width: ${(props) => (props.width ? props.width : '100%')};
-  height: ${(props) => (props.height ? props.height : '100%')};
-  background-position: center center;
-  background-size: ${(props) => props.type};
-  background-image: url(${(props) => props.url});
-  background-repeat: no-repeat;
-  opacity: ${(props) => props.opacity};
-  transition: ${(props) =>
-    props.isAnimated ? 'opacity 500ms ease-out' : 'none'};
+  width: 100%;
 `;
 
-export const TYPES = {
-  FILL: 'cover',
-  FIT: 'contain',
-};
+const ImgContainer = styled.div`
+  transition: height 500ms ease-in-out;
+  width: 100%;
+`;
 
-const Picture = ({ height, isAnimated = true, type, url, width }) => {
-  const [imageUrl, setImageUrl] = useState('');
+const Img = styled.img`
+  transition: opacity 500ms ease-in-out;
+  width: 100%;
+`;
 
-  let content = undefined;
-
-  if (imageUrl === '') {
-    content = <Loading />;
-  }
-
-  let image = undefined;
+const Picture = ({ alt = '', url }) => {
+  const [height, setHeight] = useState('60px');
+  const [isLoading, setIsLoading] = useState(true);
+  const [opacity, setOpacity] = useState(0);
+  const elWrapper = useRef();
+  const elImage = useRef();
 
   const onImageLoaded = () => {
-    const url = image.src;
-
-    setImageUrl(url);
+    const ratio = elImage.current.height / elImage.current.width;
+    const bounds = elWrapper.current.getBoundingClientRect();
+    setHeight(`${bounds.width * ratio}px`);
+    setOpacity(1);
+    setIsLoading(false);
   };
 
-  image = new Image(width, height);
-  image.addEventListener('load', onImageLoaded, false);
-  image.src = url;
+  const onResize = () => {
+    const ratio = elImage.current.height / elImage.current.width;
+    const bounds = elWrapper.current.getBoundingClientRect();
+    setHeight(`${bounds.width * ratio}px`);
+  };
+
+  useEffect(() => {
+    elImage.current.src = url;
+
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
 
   return (
-    <Container width={width} height={height}>
-      <BgImage
-        height={height}
-        isAnimated={isAnimated}
-        opacity={imageUrl === '' ? 0 : 1}
-        type={type}
-        url={imageUrl}
-        width={width}
-      />
-      {content}
-    </Container>
+    <Wrapper ref={elWrapper}>
+      {isLoading && (
+        <LoadingScreen>
+          <Loading />
+        </LoadingScreen>
+      )}
+      <ImgContainer style={{ height, opacity }}>
+        <Img
+          alt={alt}
+          onLoad={onImageLoaded}
+          ref={elImage}
+          style={{ opacity }}
+        />
+      </ImgContainer>
+    </Wrapper>
   );
 };
 
-const { string, oneOf } = PropTypes;
-
 Picture.propTypes = {
-  height: string,
-  type: oneOf([TYPES.FILL, TYPES.FIT]),
+  alt: string,
   url: string.isRequired,
-  width: string,
 };
 
 Picture.defaultProps = {
   height: '100%',
-  type: TYPES.FILL,
   width: '100%',
 };
 

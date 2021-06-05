@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Picture, { TYPES } from './Picture';
+import Picture from './Picture';
 
 const Container = styled.div`
   height: 100%;
@@ -13,7 +13,7 @@ const Container = styled.div`
 const Slide = ({ isAnimated, imageUrl, title }) => {
   return (
     <Container>
-      <Picture isAnimated={isAnimated} type={TYPES.FIT} url={imageUrl} />
+      <Picture isAnimated={isAnimated} url={imageUrl} />
     </Container>
   );
 };

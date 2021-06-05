@@ -24,6 +24,7 @@ export const createImages = (data, prefix) => {
         imageUrl={image_url}
         isAnimated={true}
         key={item.id}
+        subTitle={item.location}
         title={item.title}
         to={`${process.env.PUBLIC_URL}/${prefix}/${item.id}`}
       />
