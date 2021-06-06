@@ -21,7 +21,6 @@ const LoadingScreen = styled.div`
 `;
 
 const ImgContainer = styled.div`
-  transition: height 500ms ease-in-out;
   width: 100%;
 `;
 
@@ -30,17 +29,27 @@ const Img = styled.img`
   width: 100%;
 `;
 
-const Picture = ({ alt = '', url }) => {
-  const [height, setHeight] = useState('60px');
+const Picture = ({ alt = '', height, url, width }) => {
+  const [scaledHeight, setScaledHeight] = useState('60px');
   const [isLoading, setIsLoading] = useState(true);
   const [opacity, setOpacity] = useState(0);
   const elWrapper = useRef();
   const elImage = useRef();
 
-  const onImageLoaded = () => {
-    const ratio = elImage.current.height / elImage.current.width;
+  const updateHeight = (height, width) => {
+    const ratio = height / width;
     const bounds = elWrapper.current.getBoundingClientRect();
-    setHeight(`${bounds.width * ratio}px`);
+    setScaledHeight(`${bounds.width * ratio}px`);
+  };
+
+  useEffect(() => {
+    if (elWrapper.current && height && width) {
+      updateHeight(height, width);
+    }
+  }, [elWrapper, height, width]);
+
+  const onImageLoaded = () => {
+    updateHeight(elImage.current.height, elImage.current.width);
     setOpacity(1);
     setIsLoading(false);
   };
@@ -48,7 +57,7 @@ const Picture = ({ alt = '', url }) => {
   const onResize = () => {
     const ratio = elImage.current.height / elImage.current.width;
     const bounds = elWrapper.current.getBoundingClientRect();
-    setHeight(`${bounds.width * ratio}px`);
+    setScaledHeight(`${bounds.width * ratio}px`);
   };
 
   useEffect(() => {
@@ -59,7 +68,7 @@ const Picture = ({ alt = '', url }) => {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, []);
+  }, [url]);
 
   return (
     <Wrapper ref={elWrapper}>
@@ -68,7 +77,12 @@ const Picture = ({ alt = '', url }) => {
           <Loading />
         </LoadingScreen>
       )}
-      <ImgContainer style={{ height, opacity }}>
+      <ImgContainer
+        style={{
+          height: scaledHeight,
+          opacity,
+          transition: !isLoading ? 'height 500ms ease-in-out' : null,
+        }}>
         <Img
           alt={alt}
           onLoad={onImageLoaded}

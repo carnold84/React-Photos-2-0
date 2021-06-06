@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const Container = styled(motion.div)`
   columns: 1;
   column-gap: 20px;
-  margin: 0 0 20px;
   width: 100%;
 
   & > * {
@@ -30,7 +29,18 @@ const Container = styled(motion.div)`
 `;
 
 const AnimatedGrid = ({ children }) => {
-  return <Container>{children}</Container>;
+  return (
+    <Container
+      animate="enter"
+      exit="exit"
+      initial="initial"
+      variants={{
+        enter: { transition: { staggerChildren: 0.1 } },
+        exit: { transition: { staggerChildren: 0.1 } },
+      }}>
+      {children}
+    </Container>
+  );
 };
 
 export default AnimatedGrid;

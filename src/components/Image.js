@@ -59,7 +59,16 @@ const imageVariants = {
   hover: { scale: 1.1 },
 };
 
-const Image = ({ imageUrl, isAnimated, subTitle, title, to }) => {
+const Image = ({
+  alt,
+  height,
+  imageUrl,
+  isAnimated,
+  subTitle,
+  title,
+  to,
+  width,
+}) => {
   return (
     <motion.div variants={variants}>
       <Container to={to}>
@@ -68,7 +77,13 @@ const Image = ({ imageUrl, isAnimated, subTitle, title, to }) => {
           variants={frameVariants}
           whileHover={'hover'}>
           <ImageContainer variants={imageVariants} transition={transition}>
-            <Picture isAnimated={isAnimated} url={imageUrl} />
+            <Picture
+              alt={alt}
+              height={height}
+              isAnimated={isAnimated}
+              url={imageUrl}
+              width={width}
+            />
           </ImageContainer>
         </Frame>
         <Title>{title}</Title>

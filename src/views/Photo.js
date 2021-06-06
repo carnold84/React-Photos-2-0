@@ -6,9 +6,6 @@ import Content from '../components/Content';
 import Header from '../components/Header';
 import Slide from '../components/Slide';
 
-const IMAGE_BASE = 'https://res.cloudinary.com/carnold/image/upload';
-const IMAGE_ID = 'v1622797875/react-photos';
-
 const Photo = ({ albumId, navigate, photoId }) => {
   const photo = usePhoto(albumId, photoId);
 
@@ -16,7 +13,7 @@ const Photo = ({ albumId, navigate, photoId }) => {
     navigate(`${process.env.PUBLIC_URL}/album/${albumId}`);
   };
 
-  const imageUrl = `${IMAGE_BASE}/w_800/${IMAGE_ID}/${photo.url}`;
+  const imageUrl = photo.url;
 
   return (
     <>
