@@ -1,66 +1,124 @@
 {
-    "albums" : [
+  "albums": [
+    {
+      "id": "1",
+      "title": "Nature",
+      "photos": [
         {
-            "id" : "1",
-            "title" : "Lille - Day 1",
-            "photos" : [
-                {
-                    "id" : "1",
-                    "title" : "Statue",
-                    "url" : "sample_images/IMG_20160408_172847.jpg"
-                },
-                {
-                    "id" : "2",
-                    "title" : "Newly renovated Lille Cathedral",
-                    "url" : "sample_images/IMG_20160408_160007.jpg"
-                },
-                {
-                    "id" : "3",
-                    "title" : "Interior of Lille Cathedral",
-                    "url" : "sample_images/IMG_20160408_155644.jpg"
-                },
-                {
-                    "id" : "4",
-                    "title" : "Lille Old Town Gate",
-                    "url" : "sample_images/IMG_20160408_154610.jpg"
-                },
-                {
-                    "id" : "5",
-                    "title" : "War Memorial",
-                    "url" : "sample_images/IMG_20160408_141327.jpg"
-                }
-            ]
+          "height": 400,
+          "id": "1",
+          "location": "Islande, Islande",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/nature-1.jpg",
+          "title": "fjadrargljufur Canyon",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/nature-1.jpg",
+          "width": 300
         },
         {
-            "id" : "2",
-            "title" : "Lille - Day 2",
-            "photos" : [
-                {
-                    "id" : "1",
-                    "title" : "Lille City Centre",
-                    "url" : "sample_images/IMG_20160408_140952.jpg"
-                },
-                {
-                    "id" : "2",
-                    "title" : "Lille Town Hall",
-                    "url" : "sample_images/IMG_20160408_140948.jpg"
-                },
-                {
-                    "id" : "3",
-                    "title" : "Lille Opera House",
-                    "url" : "sample_images/IMG_20160408_140945.jpg"
-                },
-                {
-                    "id" : "4",
-                    "title" : "Capybara at Lille Zoo",
-                    "url" : "sample_images/IMG_20160408_110724.jpg"
-                },
-                {
-                    "id" : "5",
-                    "title" : "Meerkats at Lille Zoo",
-                    "url" : "sample_images/IMG_20160408_105103.jpg"
-                }
-            ]
+          "height": 450,
+          "id": "2",
+          "location": "Hinterer Langbathsee",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/nature-2.jpg",
+          "title": "Ebensee, Österreich",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/nature-2.jpg",
+          "width": 300
+        },
+        {
+          "height": 200,
+          "id": "3",
+          "location": "Tenerife, Spain",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/nature-3.jpg",
+          "title": "Tenerife, Spain",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/nature-3.jpg",
+          "width": 300
+        },
+        {
+          "height": 200,
+          "id": "4",
+          "location": "Pully, Suisse",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/nature-4.jpg",
+          "title": "Lac Léman",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/nature-4.jpg",
+          "width": 300
+        },
+        {
+          "height": 200,
+          "id": "5",
+          "location": "Iceland",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/nature-5.jpg",
+          "title": "Skógafoss",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/nature-5.jpg",
+          "width": 300
+        },
+        {
+          "height": 200,
+          "id": "6",
+          "location": "Tuolumne Meadows, United States",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/nature-6.jpg",
+          "title": "Yosemite Tunnel",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/nature-6.jpg",
+          "width": 300
+        },
+        {
+          "height": 450,
+          "id": "7",
+          "location": "Cumberland wildlife park",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/nature-7.jpg",
+          "title": "Grünau im Almtal, Austria",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/nature-7.jpg",
+          "width": 300
         }
-    ]
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Architecture",
+      "photos": [
+        {
+          "height": 450,
+          "id": "1",
+          "location": "London, United Kingdom",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/architecture-1.jpg",
+          "title": "The British Museum",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/architecture-1.jpg",
+          "width": 300
+        },
+        {
+          "height": 453,
+          "id": "2",
+          "location": "Milan, Italy",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/architecture-2.jpg",
+          "title": "Bosco Verticale",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/architecture-2.jpg",
+          "width": 300
+        },
+        {
+          "height": 240,
+          "id": "3",
+          "location": "Hudson Yards, Manhattan, New York, NY, USA",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/architecture-3.jpg",
+          "title": "Vessel",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/architecture-3.jpg",
+          "width": 300
+        },
+        {
+          "height": 450,
+          "id": "4",
+          "location": "Paris, France",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/architecture-4.jpg",
+          "title": "Saint Chapelle",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/architecture-4.jpg",
+          "width": 300
+        },
+        {
+          "height": 450,
+          "id": "5",
+          "location": "Tehran, Iran",
+          "thumbUrl": "https://res.cloudinary.com/carnold/image/upload/w_300/v1622797875/react-photos/architecture-5.jpg",
+          "title": "Azadi Tower",
+          "url": "https://res.cloudinary.com/carnold/image/upload/w_800/v1622797875/react-photos/architecture-5.jpg",
+          "width": 300
+        }
+      ]
+    }
+  ]
 }
