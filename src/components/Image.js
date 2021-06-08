@@ -12,6 +12,7 @@ const Wrapper = styled(motion.div)`
     https://stackoverflow.com/questions/32142182/css-column-count-and-transition-weird-jump-on-chrome
   */
   -webkit-backface-visibility: hidden;
+  -webkit-column-break-inside: avoid;
 `;
 
 const Container = styled(Link)`
