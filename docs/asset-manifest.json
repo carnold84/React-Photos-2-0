@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/React-Photos-2-0/static/js/main.cf79183e.chunk.js",
-    "main.js.map": "/React-Photos-2-0/static/js/main.cf79183e.chunk.js.map",
+    "main.js": "/React-Photos-2-0/static/js/main.a9defd15.chunk.js",
+    "main.js.map": "/React-Photos-2-0/static/js/main.a9defd15.chunk.js.map",
     "runtime-main.js": "/React-Photos-2-0/static/js/runtime-main.c2122537.js",
     "runtime-main.js.map": "/React-Photos-2-0/static/js/runtime-main.c2122537.js.map",
     "static/js/2.8c2414f7.chunk.js": "/React-Photos-2-0/static/js/2.8c2414f7.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.c2122537.js",
     "static/js/2.8c2414f7.chunk.js",
-    "static/js/main.cf79183e.chunk.js"
+    "static/js/main.a9defd15.chunk.js"
   ]
 }
