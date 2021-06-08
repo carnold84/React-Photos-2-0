@@ -4,15 +4,15 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  height: calc(100vh - 65px);
   justify-content: center;
+  position: relative;
   width: 100%;
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 25px;
+  padding: 0 25px 30px;
   width: 100%;
 
   @media (min-width: 1200px) {
@@ -20,9 +20,9 @@ const Container = styled.div`
   }
 `;
 
-const Content = ({ children }) => {
+const Content = ({ children, ...rest }) => {
   return (
-    <Wrapper>
+    <Wrapper {...rest}>
       <Container>{children}</Container>
     </Wrapper>
   );

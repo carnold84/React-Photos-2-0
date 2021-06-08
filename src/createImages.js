@@ -27,7 +27,6 @@ export const createImages = (data, prefix) => {
         height={height}
         id={item.id}
         imageUrl={imageUrl}
-        isAnimated={true}
         key={item.id}
         subTitle={item.location}
         title={item.title}

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { string } from 'prop-types';
+import { number, string } from 'prop-types';
 import styled from 'styled-components';
 
 import Loading from './Loading';
@@ -96,7 +96,9 @@ const Picture = ({ alt = '', height, url, width }) => {
 
 Picture.propTypes = {
   alt: string,
+  height: number,
   url: string.isRequired,
+  width: number,
 };
 
 Picture.defaultProps = {

@@ -3,13 +3,11 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const Container = styled(motion.div)`
+  /* safari hack to fix columns bug */
+  -webkit-backface-visibility: hidden;
   columns: 1;
   column-gap: 20px;
   width: 100%;
-
-  & > * {
-    margin: 0 0 20px;
-  }
 
   @media (min-width: 460px) {
     columns: 2;
@@ -28,7 +26,7 @@ const Container = styled(motion.div)`
   }
 `;
 
-const AnimatedGrid = ({ children }) => {
+const AnimatedGrid = ({ children, ...rest }) => {
   return (
     <Container
       animate="enter"
@@ -37,7 +35,8 @@ const AnimatedGrid = ({ children }) => {
       variants={{
         enter: { transition: { staggerChildren: 0.1 } },
         exit: { transition: { staggerChildren: 0.1 } },
-      }}>
+      }}
+      {...rest}>
       {children}
     </Container>
   );
