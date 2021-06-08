@@ -8,7 +8,7 @@ const Container = styled(motion.div)`
   display: flex;
   flex-shrink: 0;
   height: 40px;
-  margin: 20px 0 10px;
+  margin: 20px 0;
   position: relative;
 `;
 
@@ -76,7 +76,7 @@ const Actionbar = ({ onBack, title }) => {
       variants={{
         initial: { opacity: 0, transition, x: -20 },
         enter: { opacity: 1, transition, x: 0 },
-        exit: { opacity: 0, transition, x: 20 },
+        exit: { opacity: 0, transition, x: -20 },
       }}>
       {backBtn}
       <Title>{title}</Title>

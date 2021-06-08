@@ -3,29 +3,30 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const Container = styled(motion.div)`
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
+  /* safari hack to fix columns bug */
+  -webkit-backface-visibility: hidden;
+  columns: 1;
+  column-gap: 20px;
   width: 100%;
 
   @media (min-width: 460px) {
-    grid-template-columns: 1fr 1fr;
+    columns: 2;
   }
 
   @media (min-width: 800px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    columns: 3;
   }
 
   @media (min-width: 1000px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    columns: 4;
   }
 
   @media (min-width: 1250px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    columns: 5;
   }
 `;
 
-const AnimatedGrid = ({ children }) => {
+const AnimatedGrid = ({ children, ...rest }) => {
   return (
     <Container
       animate="enter"
@@ -34,7 +35,8 @@ const AnimatedGrid = ({ children }) => {
       variants={{
         enter: { transition: { staggerChildren: 0.1 } },
         exit: { transition: { staggerChildren: 0.1 } },
-      }}>
+      }}
+      {...rest}>
       {children}
     </Container>
   );

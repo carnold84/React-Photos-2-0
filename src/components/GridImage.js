@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { number, string } from 'prop-types';
+import { string } from 'prop-types';
 import styled from 'styled-components';
 
 import Loading from './Loading';
@@ -21,6 +21,7 @@ const LoadingScreen = styled.div`
 `;
 
 const ImgContainer = styled.div`
+  transition: height 500ms ease-in-out;
   width: 100%;
 `;
 
@@ -29,27 +30,17 @@ const Img = styled.img`
   width: 100%;
 `;
 
-const Picture = ({ alt = '', height, url, width }) => {
-  const [scaledHeight, setScaledHeight] = useState('60px');
+const Picture = ({ alt = '', url }) => {
+  const [height, setHeight] = useState('60px');
   const [isLoading, setIsLoading] = useState(true);
   const [opacity, setOpacity] = useState(0);
   const elWrapper = useRef();
   const elImage = useRef();
 
-  const updateHeight = (height, width) => {
-    const ratio = height / width;
-    const bounds = elWrapper.current.getBoundingClientRect();
-    setScaledHeight(`${bounds.width * ratio}px`);
-  };
-
-  useEffect(() => {
-    if (elWrapper.current && height && width) {
-      updateHeight(height, width);
-    }
-  }, [elWrapper, height, width]);
-
   const onImageLoaded = () => {
-    updateHeight(elImage.current.height, elImage.current.width);
+    const ratio = elImage.current.height / elImage.current.width;
+    const bounds = elWrapper.current.getBoundingClientRect();
+    setHeight(`${bounds.width * ratio}px`);
     setOpacity(1);
     setIsLoading(false);
   };
@@ -57,7 +48,7 @@ const Picture = ({ alt = '', height, url, width }) => {
   const onResize = () => {
     const ratio = elImage.current.height / elImage.current.width;
     const bounds = elWrapper.current.getBoundingClientRect();
-    setScaledHeight(`${bounds.width * ratio}px`);
+    setHeight(`${bounds.width * ratio}px`);
   };
 
   useEffect(() => {
@@ -68,7 +59,7 @@ const Picture = ({ alt = '', height, url, width }) => {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, [url]);
+  }, []);
 
   return (
     <Wrapper ref={elWrapper}>
@@ -77,12 +68,7 @@ const Picture = ({ alt = '', height, url, width }) => {
           <Loading />
         </LoadingScreen>
       )}
-      <ImgContainer
-        style={{
-          height: scaledHeight,
-          opacity,
-          transition: !isLoading ? 'height 500ms ease-in-out' : null,
-        }}>
+      <ImgContainer style={{ height, opacity }}>
         <Img
           alt={alt}
           onLoad={onImageLoaded}
@@ -96,9 +82,7 @@ const Picture = ({ alt = '', height, url, width }) => {
 
 Picture.propTypes = {
   alt: string,
-  height: number,
   url: string.isRequired,
-  width: number,
 };
 
 Picture.defaultProps = {

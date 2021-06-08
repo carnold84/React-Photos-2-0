@@ -1,10 +1,19 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import { usePhoto } from '../store';
 import Actionbar from '../components/Actionbar';
 import Content from '../components/Content';
 import Header from '../components/Header';
 import Slide from '../components/Slide';
+
+const SlideWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+`;
 
 const Photo = ({ albumId, navigate, photoId }) => {
   const photo = usePhoto(albumId, photoId);
@@ -16,28 +25,19 @@ const Photo = ({ albumId, navigate, photoId }) => {
   return (
     <>
       <Header />
-      <Content>
+      <Content
+        style={{
+          height: 'calc(100vh - 65px)',
+        }}>
         <Actionbar title={photo.title} onBack={onBack} />
-        <motion.div
-          animate={{ opacity: 1, scale: 1 }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          style={{ display: 'flex', height: '100%' }}
-          transition={{ ease: 'easeOut', duration: 0.5 }}>
-          <div
-            style={{
-              flexGrow: 1,
-              margin: '20px 0 40px',
-              position: 'relative',
-            }}>
-            <Slide
-              id={photo.id}
-              imageUrl={photo.url}
-              isAnimated={false}
-              title={photo.title}
-            />
-          </div>
-        </motion.div>
+        <SlideWrapper>
+          <Slide
+            alt={photo.title}
+            height={photo.height}
+            url={photo.url}
+            width={photo.width}
+          />
+        </SlideWrapper>
       </Content>
     </>
   );

@@ -21,7 +21,7 @@ export const StoreProvider = ({ children }) => {
             photos: album.photos.map((photo) => {
               return {
                 ...photo,
-                url: `${process.env.PUBLIC_URL}/${photo.url}`,
+                url: photo.url,
               };
             }),
           };
